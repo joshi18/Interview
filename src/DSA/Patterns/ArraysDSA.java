@@ -1,6 +1,7 @@
 package DSA.Patterns;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ArraysDSA {
@@ -8,6 +9,7 @@ public class ArraysDSA {
 
     public static void main(String args[]){
        // System.out.println(binaryserch(90));  Time complexity = log n (if sorted array is given) if not then it is (n log n)
+        //System.out.println(leftshiftthearray(3));
         leftshiftthearray(3);
     }
     public static int  binaryserch(int p) {
@@ -39,15 +41,25 @@ public class ArraysDSA {
     public static void leftshiftthearray(int p){
         int[] arr = {1,2,3,4,5,6,7,8,9,0};
        int n =  arr.length;
-        for(int i=0;i<n+p;i++){
-            if (i>n){
-                arr[i-n] = arr[i-n];
-            }
-            else {
-            arr[i]= arr[i+p];}
+       int d=  p;
+       reversethearray(arr,0,d-1);
+       reversethearray(arr,d,n-1);
+       reversethearray(arr,0,n-1);
+        System.out.println(Arrays.toString(arr));
 
+
+
+     }
+     public static void reversethearray(int []arr,int i,int j){
+        while(i<=j){
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            i++;
+            j--;
         }
-        System.out.println(arr);
+
+
 
      }
 
