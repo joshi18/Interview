@@ -18,6 +18,8 @@ public class CompableFuture {
             }
         });
        // System.out.println(n.get());
+        int a= 10;
+        //Integer
         Thread.sleep(1000);
         System.out.println("MAIN thread executed");
 
