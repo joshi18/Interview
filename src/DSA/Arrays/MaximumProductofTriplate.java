@@ -13,7 +13,7 @@ public class MaximumProductofTriplate {
         System.out.println(getmaximumProduct(abc));
     }
     public static int getmaximumProduct(List<Integer> listOfNumbers){
-
+    return 0;
 
 
 
