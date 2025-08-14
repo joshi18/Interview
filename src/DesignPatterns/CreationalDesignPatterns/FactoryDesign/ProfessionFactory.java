@@ -6,6 +6,7 @@ public class ProfessionFactory {
 
         if (typeofProfession == null){
             return null;
+
         }
         if (typeofProfession.equalsIgnoreCase("Doctor")){
             return new Doctor();
