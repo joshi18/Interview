@@ -65,8 +65,18 @@ public class BasicToAdvancedStreamApi {
         System.out.println(findtheFirstelement.get());
 
         // using to toMap()
-        abc.chars().mapToObj(a->(char)a).map(a->Character.toUpperCase(a)).collect(Collectors.toMap(a->a,a->1,(c,d)->c+d,LinkedHashMap::new));
+        Optional<Character> nok = abc.chars().mapToObj(a->(char)a).map(a->Character.toUpperCase(a)).collect(Collectors.toMap(a->a,a->1,(c,d)->c+d,LinkedHashMap::new)).entrySet().stream().filter(a->a.getValue()==1).map(a->a.getKey()).findFirst();
+        System.out.println(nok.get());
 
+
+        // without both
+
+        Optional<Character> firstNonRepeating = abc.chars()
+                .mapToObj(c -> Character.toUpperCase((char) c))
+                .filter(ch -> abc.toUpperCase().indexOf(ch) == abc.toUpperCase().lastIndexOf(ch))
+                .findFirst();
+
+        System.out.println(firstNonRepeating.orElse(null));
 
 
 
