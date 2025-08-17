@@ -109,15 +109,15 @@ public class BasicToAdvancedStreamApi {
         // Reverse a string using reduce operation
         String y = "Abhijit";
         String fgh = y.chars()
-                .mapToObj(a->String.valueOf((char)a))
+                .mapToObj(a -> String.valueOf((char) a))
                 .sorted(Comparator.reverseOrder())
-                        .reduce("",(a,b)->a+b);
+                .reduce("", (a, b) -> a + b);
         System.out.println(fgh);
 
         // Reverse a string using Joining operator
 
-        String asdff= y.chars().mapToObj(a->String.valueOf((char)a))
-                .sorted((a,b)->b.compareTo(a))
+        String asdff = y.chars().mapToObj(a -> String.valueOf((char) a))
+                .sorted((a, b) -> b.compareTo(a))
                 .collect(Collectors.joining());
         System.out.println(asdff);
 

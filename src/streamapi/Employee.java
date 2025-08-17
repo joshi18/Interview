@@ -3,8 +3,7 @@ package streamapi;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Employee
-{
+public class Employee {
     int id;
 
     String name;
@@ -19,8 +18,7 @@ public class Employee
 
     double salary;
 
-    public Employee(int id, String name, int age, String gender, String department, int yearOfJoining, double salary)
-    {
+    public Employee(int id, String name, int age, String gender, String department, int yearOfJoining, double salary) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -30,54 +28,46 @@ public class Employee
         this.salary = salary;
     }
 
-    public int getId()
-    {
+    public int getId() {
         return id;
     }
 
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    public int getAge()
-    {
+    public int getAge() {
         return age;
     }
 
-    public String getGender()
-    {
+    public String getGender() {
         return gender;
     }
 
-    public String getDepartment()
-    {
+    public String getDepartment() {
         return department;
     }
 
-    public int getYearOfJoining()
-    {
+    public int getYearOfJoining() {
         return yearOfJoining;
     }
 
-    public double getSalary()
-    {
+    public double getSalary() {
         return salary;
     }
 
     @Override
-    public String toString()
-    {
-        return "Id : "+id
-                +", Name : "+name
-                +", age : "+age
-                +", Gender : "+gender
-                +", Department : "+department
-                +", Year Of Joining : "+yearOfJoining
-                +", Salary : "+salary;
+    public String toString() {
+        return "Id : " + id
+                + ", Name : " + name
+                + ", age : " + age
+                + ", Gender : " + gender
+                + ", Department : " + department
+                + ", Year Of Joining : " + yearOfJoining
+                + ", Salary : " + salary;
     }
 
-    public static List<Employee> getEmployeeList(){
+    public static List<Employee> getEmployeeList() {
         List<Employee> employeeList = new ArrayList<Employee>();
 
         employeeList.add(new Employee(111, "Jennifer", 22, "Female", "HR", 2017, 55000.0));

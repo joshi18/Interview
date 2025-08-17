@@ -9,20 +9,19 @@ import java.util.stream.Collectors;
 
 public class freanquencyOfNumbers {
 
-    public void getFrenquencyOfNumbers(){
+    public void getFrenquencyOfNumbers() {
         List<Integer> abc = new ArrayList<>();
         abc.add(1);
         abc.add(2);
         abc.add(3);
 
-        
+
         abc.add(3);
         abc.add(4);
         abc.add(5);
 
-        Map<Integer,Long> map = abc.stream().collect(Collectors.groupingBy(num->num ,Collectors.counting()));
-        map.forEach((key,value)-> System.out.println("key"+key+"value"+value));
-
+        Map<Integer, Long> map = abc.stream().collect(Collectors.groupingBy(num -> num, Collectors.counting()));
+        map.forEach((key, value) -> System.out.println("key" + key + "value" + value));
 
 
     }

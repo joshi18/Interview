@@ -5,12 +5,12 @@ import java.util.stream.Collectors;
 
 public class MediumAndAdvancedQuestions {
     public static void main(String[] args) {
-        List<Integer> abc = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9,8,9);
+        List<Integer> abc = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 8, 9);
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         String stringABC = "AaBBCCdwqA";
-        List<String> groupofString = Arrays.asList("Abhijit","Joshi","alskwih","hsdfr","lkjhg","lkcod");
-        List<Integer> k = Arrays.asList(3,3,4,5,6,7,3,2,2,3,4,5,6,7,78,8,8,88,90);
-        List<String> q6  = Arrays.asList("Abhijit","Joshi","ZWES","rtyuio");
+        List<String> groupofString = Arrays.asList("Abhijit", "Joshi", "alskwih", "hsdfr", "lkjhg", "lkcod");
+        List<Integer> k = Arrays.asList(3, 3, 4, 5, 6, 7, 3, 2, 2, 3, 4, 5, 6, 7, 78, 8, 8, 88, 90);
+        List<String> q6 = Arrays.asList("Abhijit", "Joshi", "ZWES", "rtyuio");
 
         // Q1
         Optional<Integer> c = abc.stream().sorted((a, b) -> b - a).distinct().skip(1).findFirst();
@@ -36,20 +36,20 @@ public class MediumAndAdvancedQuestions {
 
         // Q3
 
-        Map<Integer,List<String>> Groupbylenght =groupofString.stream()
-                .collect(Collectors.groupingBy(a->a.length()));
-                        //.collect(Collectors.toMap(k->k,v->v.length()));
+        Map<Integer, List<String>> Groupbylenght = groupofString.stream()
+                .collect(Collectors.groupingBy(a -> a.length()));
+        //.collect(Collectors.toMap(k->k,v->v.length()));
         System.out.println(Groupbylenght);
 
 
         // Q4
 
-         Optional<Integer> m = k.stream()
-                .collect(Collectors.toMap(p->p,v->1,(a,b)->a+b,LinkedHashMap::new)) // by using linked hashmap order is maintained
+        Optional<Integer> m = k.stream()
+                .collect(Collectors.toMap(p -> p, v -> 1, (a, b) -> a + b, LinkedHashMap::new)) // by using linked hashmap order is maintained
                 .entrySet()
                 .stream()
-                .sorted((a,b)->b.getValue()-a.getValue())
-                .map(a->a.getKey())
+                .sorted((a, b) -> b.getValue() - a.getValue())
+                .map(a -> a.getKey())
                 .findFirst();
 
         System.out.println(m.get());
@@ -63,19 +63,14 @@ public class MediumAndAdvancedQuestions {
         System.out.println(das);
 
         // Q6
-        List<String> huy =q6.stream()
-                .map(a->a.chars().mapToObj(h->String.valueOf((char)h))
-                        .reduce("",(p,b)->b+p))
-                        .collect(Collectors.toList());
+        List<String> huy = q6.stream()
+                .map(a -> a.chars().mapToObj(h -> String.valueOf((char) h))
+                        .reduce("", (p, b) -> b + p))
+                .collect(Collectors.toList());
         System.out.println(huy);
 
 
-
-
         // Q7
-
-
-
 
 
     }
