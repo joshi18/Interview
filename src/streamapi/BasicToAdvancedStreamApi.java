@@ -26,46 +26,54 @@ public class BasicToAdvancedStreamApi {
 
         //mapToInt() => It takes input as a function .it return Intstream.
         //chars() => returns Intstream. Does not take any input
-        // mapToObj() => takens function as input. return stream .Converts primitives (IntStream, LongStream, DoubleStream) back to objects.
-
+        // mapToLong() => same like mapToInt(). it returns Intstream.
 
 
         // Terminal operations
         //collect() => takes Collectors input and returns lisy/set/map.
-        //Collectors.toMap()  => keyMapeer(Function),valueMapper(Function),mergeFunction,Mapfactory
-        // Collectors.groupingBy() => classfire(Function), Mapfactory,downstreamcollector(Again collector)
+        //Collectors.toMap()  => keyMapper(Function),valueMapper(Function),mergeFunction,Map factory
+        // Collectors.groupingBy() => classifier(Function), Map factory,downstream collector(Again collector)
+        // forEach() => Takes Consumer as input.
+        // findFirst() => finds  first element from the List
+        // sum() => It applicable only on IntStream
+        //reduce() =>   It takes the binary operator as input. Gives a single value.  reduce(U identity, BiFunction<U, ? super T, U> accumulator, BinaryOperator<U> combiner)
 
 
+        List<Integer> okBye = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
-        List<Integer> okBye = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
-
-        List<Integer> listOfevenNumbers =okBye.stream().filter(x->x%2==0).collect(Collectors.toList());
+        List<Integer> listOfevenNumbers = okBye.stream().filter(x -> x % 2 == 0).collect(Collectors.toList());
         System.out.println(listOfevenNumbers);
 
 
-        List<List<Integer>> listoflistIntegers = Arrays.asList(Arrays.asList(1,2,3,4),Arrays.asList(9,7,0,35),Arrays.asList(2,9,10,3000));
-        List<Integer> ListOfintegres = listoflistIntegers.stream().flatMap(x->x.stream()).collect(Collectors.toList());
+        List<List<Integer>> listoflistIntegers = Arrays.asList(Arrays.asList(1, 2, 3, 4), Arrays.asList(9, 7, 0, 35), Arrays.asList(2, 9, 10, 3000));
+        List<Integer> ListOfintegres = listoflistIntegers.stream().flatMap(x -> x.stream()).collect(Collectors.toList());
         System.out.println(ListOfintegres);
 
 //        listoflistIntegers.stream().distinct()
-       List<Integer> n  = okBye.stream().limit(5).collect(Collectors.toList());
+        List<Integer> n = okBye.stream().limit(5).collect(Collectors.toList());
         System.out.println(n);
         //okBye.stream().peek(a-> System.out.println(a)).collect(Collectors.toList());
 
 
-
-
-        // Find the non repeating charters in a String . this is using by grouping by terminal oprator
+        // Find the non repeating charters in a String . this is using by grouping by terminal operator
         String abc = "AAbbccfgghj";
-        Map<Character,Long> map  = abc.chars().mapToObj(a->(char)a)
-                .map(a->Character.toUpperCase(a))
-                .collect(Collectors.groupingBy(a->a, LinkedHashMap::new,Collectors.counting()));
+        Map<Character, Long> map = abc.chars().mapToObj(a -> (char) a)
+                .map(a -> Character.toUpperCase(a))
+                .collect(Collectors.groupingBy(a -> a, LinkedHashMap::new, Collectors.counting()));
         System.out.println(map);
-         Optional<Character> findtheFirstelement = map.entrySet().stream().filter(a->a.getValue()==1).map(a->a.getKey()).findFirst();
+        Optional<Character> findtheFirstelement = map.entrySet().stream().filter(a -> a.getValue() == 1).map(a -> a.getKey()).findFirst();
         System.out.println(findtheFirstelement.get());
 
         // using to toMap()
-        Optional<Character> nok = abc.chars().mapToObj(a->(char)a).map(a->Character.toUpperCase(a)).collect(Collectors.toMap(a->a,a->1,(c,d)->c+d,LinkedHashMap::new)).entrySet().stream().filter(a->a.getValue()==1).map(a->a.getKey()).findFirst();
+        Optional<Character> nok = abc.chars()
+                .mapToObj(a -> (char) a)
+                .map(a -> Character.toUpperCase(a))
+                .collect(Collectors.toMap(a -> a, a -> 1, (c, d) -> c + d, LinkedHashMap::new))
+                .entrySet()
+                .stream()
+                .filter(a -> a.getValue() == 1)
+                .map(a -> a.getKey())
+                .findFirst();
         System.out.println(nok.get());
 
 
@@ -79,7 +87,23 @@ public class BasicToAdvancedStreamApi {
         System.out.println(firstNonRepeating.orElse(null));
 
 
+        // sum of numbers
+        List<Integer> lp = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        Optional<Integer> abcd = lp.stream().reduce((a, b) -> a + b);
+        int abcde = lp.stream().reduce(0, (a, b) -> a + b);
+        System.out.println(abcde);
 
+        // Sum of Length of Strings
+        List<String> opi = Arrays.asList("Abhijit", "Joshi");
+        int sumofStrinfs = opi.stream().reduce(0, (a, b) -> a + b.length(), (v, b) -> v + b);
+        // First one is default value , addition of default value + lenght of first string, combiner where adding the sum of elementes
+        System.out.println(sumofStrinfs);
+
+        //opi.stream().map(a->a.length()).reduce(0,(a,b)->a+b);
+        //without using reduce
+
+        Integer k = opi.stream().mapToInt(a -> a.length()).sum();
+        System.out.println(k);
 
 
     }
