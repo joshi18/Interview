@@ -2,6 +2,7 @@ package streamapi;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class BasicToAdvancedStreamApi {
@@ -120,6 +121,13 @@ public class BasicToAdvancedStreamApi {
                 .sorted((a, b) -> b.compareTo(a))
                 .collect(Collectors.joining());
         System.out.println(asdff);
+
+
+        // range closed.
+        // print 1  to 10 numbers .
+        IntStream.range(1,11).forEach(a-> System.out.println(a));
+        System.out.println(IntStream.range(1,20).sum());
+        System.out.println(IntStream.range(1,30).average().getAsDouble());
 
 
     }

@@ -59,7 +59,7 @@ public class ArrayListabc {
 //        // we can modify Arrays.asList and List.of methods. means we can not remove and add the element.
 
 
-        // Time Complecity
+        // Time Complexity
         //add the element in the array = O(n)  // resizing th earray and (worst case  time)
         // removing the element in the  arraya = O(n)  // resizing and shifting the elemetns
 

@@ -1,6 +1,6 @@
 package multithreading;
 
-public class Mythread extends Thread{
+public class Mythread implements Runnable{
 
     private counter counter;
 
