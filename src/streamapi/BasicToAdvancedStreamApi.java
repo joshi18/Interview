@@ -91,7 +91,7 @@ public class BasicToAdvancedStreamApi {
         // sum of numbers
         List<Integer> lp = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         Optional<Integer> abcd = lp.stream().reduce((a, b) -> a + b);
-        int abcde = lp.stream().reduce(0, (a, b) -> a + b);
+        int abcde = lp.stream().reduce(0, Integer::sum);
         System.out.println(abcde);
 
         // Sum of Length of Strings
