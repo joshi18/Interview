@@ -1,4 +1,4 @@
-package Misnileousu;
+package Miscellaneous;
 
 public class SingletonClassEagerly {
 
