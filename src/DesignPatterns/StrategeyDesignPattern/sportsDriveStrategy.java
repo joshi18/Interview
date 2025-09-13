@@ -1,4 +1,4 @@
-package StrategeyDesignPattern;
+package DesignPatterns.StrategeyDesignPattern;
 
 public class sportsDriveStrategy implements DriveStrategy{
     @Override

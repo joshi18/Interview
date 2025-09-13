@@ -1,4 +1,4 @@
-package StrategeyDesignPattern;
+package DesignPatterns.StrategeyDesignPattern;
 
 public class Vechicle {
 
