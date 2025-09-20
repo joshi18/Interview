@@ -1,4 +1,4 @@
-package DSA.LinkedList;
+package src.DSA.LinkedList;
 
 public class MiddleOfLinkedList_846 {
 

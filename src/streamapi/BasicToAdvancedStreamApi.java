@@ -1,4 +1,4 @@
-package streamapi;
+package src.streamapi;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -19,7 +19,7 @@ public class BasicToAdvancedStreamApi {
         // sorted() =>  sorts  in natural order
         // sorted((a,b)=>a-b) => sorts the elements in custom order. Takes input as comparator. Comparator's compare methods is executed which takes  two  arguments.
         // peek() => return void. Takes one input but returns void. It can be only use dfor debugging and logging purposes.
-        // mapToObj() => takens function as input. return stream .Converts primitives (IntStream, LongStream, DoubleStream) back to objects.
+        // mapToObj() => takes function as input. return stream .Converts primitives (IntStream, LongStream, DoubleStream) back to objects.
 
 
         // Intstream =>  It is for primitive datatype (int). methods which we can use are sum(),average(),range(),rangeClosed() etc . these can not be used with on stream.
@@ -106,6 +106,9 @@ public class BasicToAdvancedStreamApi {
         Integer k = opi.stream().mapToInt(a -> a.length()).sum();
         System.out.println(k);
 
+        Collections.sort(okBye);
+        Collections.sort(okBye,(a,b)->b-a);
+
 
         // Reverse a string using reduce operation
         String y = "Abhijit";
@@ -128,6 +131,29 @@ public class BasicToAdvancedStreamApi {
         IntStream.range(1,11).forEach(a-> System.out.println(a));
         System.out.println(IntStream.range(1,20).sum());
         System.out.println(IntStream.range(1,30).average().getAsDouble());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     }

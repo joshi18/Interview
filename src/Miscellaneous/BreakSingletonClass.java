@@ -1,4 +1,4 @@
-package Miscellaneous;
+package src.Miscellaneous;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -11,11 +11,11 @@ public class BreakSingletonClass {
 
         // Using Reflection we can break the singleton class
        // Reflection is a feature in Java that lets you inspect and manipulate classes, methods, fields, and constructors at runtime, even if you don’t know them at compile time.
-        Constructor<SingletonClassEagerly> constructor = SingletonClassEagerly.class.getConstructor();
+        Constructor<Miscellaneous.SingletonClassEagerly> constructor = Miscellaneous.SingletonClassEagerly.class.getConstructor();
         constructor.setAccessible(true);
 
-        SingletonClassEagerly instance1 = constructor.newInstance();
-        SingletonClassEagerly instance2 = constructor.newInstance();
+        Miscellaneous.SingletonClassEagerly instance1 = constructor.newInstance();
+        Miscellaneous.SingletonClassEagerly instance2 = constructor.newInstance();
 
         System.out.println(instance1==instance2);
 
@@ -24,7 +24,7 @@ public class BreakSingletonClass {
         ///  using cloneable
         // first we need to implement the cloneable interface in the singleton class.
 
-        SingletonClassEagerly singletonClassEagerly = SingletonClassEagerly.getInstance1();
+        Miscellaneous.SingletonClassEagerly singletonClassEagerly = Miscellaneous.SingletonClassEagerly.getInstance1();
        // SingletonClassEagerly singletonClassEagerly2 = (SingletonClassEagerly) singletonClassEagerly.clone();
 
 
