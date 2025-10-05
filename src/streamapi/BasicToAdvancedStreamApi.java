@@ -1,6 +1,7 @@
 package src.streamapi;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -131,6 +132,70 @@ public class BasicToAdvancedStreamApi {
         IntStream.range(1,11).forEach(a-> System.out.println(a));
         System.out.println(IntStream.range(1,20).sum());
         System.out.println(IntStream.range(1,30).average().getAsDouble());
+
+
+
+        String vo = "streamapi";
+        System.out.println(vo.chars()
+                .mapToObj(a->(char)a)
+                .map(a->String.valueOf(a))
+                .filter(a->a.contains("a") || a.contains("e") || a.contains("i") || a.contains("o") || a.contains("u"))
+                .count());
+
+
+        int [] arr = {1,2,3,4};
+        System.out.println(Arrays.stream(arr)
+                        .mapToObj(a->a*a)
+                .collect(Collectors.toList()));
+
+
+       List<String> no = Arrays.asList("apple", "cat", "banana","hjk");
+       //no.stream().collect(Collectors.toMap(a->a.length(),Collectors.toList()))
+
+        System.out.println(
+                no.stream()
+                        .collect(Collectors.groupingBy(a->a.length()))
+        );
+
+
+
+
+
+       String vc =  "apple banana apple mango banana apple";
+        System.out.println(Arrays.stream(vc.split("\\s+"))
+               .collect(Collectors.groupingBy(a->a,Collectors.counting()))
+                .entrySet()
+                .stream()
+                        .sorted((a,b)-> Math.toIntExact( b.getValue()- a.getValue()))
+                        .map(a->a.getKey())
+                        .findFirst().get()
+
+
+        );
+
+
+
+        String mostFrequent = Arrays.stream(vc.split("\\s+"))
+                .collect(Collectors.groupingBy(a -> a, Collectors.counting()))
+                .entrySet()
+                .stream()
+                .max((e1, e2) -> e1.getValue().compareTo(e2.getValue()))  // compare by value
+                .map(e -> e.getKey())  // extract key (word)
+                .orElse(null);
+
+        System.out.println(mostFrequent);
+
+
+        List<streamapi.Employee> employeeList = streamapi.Employee.getEmployeeList();
+        System.out.println(employeeList.stream().collect(
+                Collectors.groupingBy(a->a.getDepartment(),
+                        Collectors.collectingAndThen(Collectors.toList()
+                        , b->b.stream()
+                                        .sorted((a,c)-> (int) (c.getSalary()-a.getSalary()))
+                                        .collect(Collectors.toList())
+
+                        ))));
+
 
 
 
