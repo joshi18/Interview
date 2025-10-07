@@ -29,16 +29,18 @@ public class BasicToAdvancedStreamApi {
         //mapToInt() => It takes input as a function .it return Intstream.
         //chars() => returns Intstream. Does not take any input
         // mapToLong() => same like mapToInt(). it returns Intstream.
+        // max() => takes input as comparator.
 
 
         // Terminal operations
-        //collect() => takes Collectors input and returns lisy/set/map.
+        //collect() => takes Collectors input and returns list/set/map.
         //Collectors.toMap()  => keyMapper(Function),valueMapper(Function),mergeFunction,Map factory
         // Collectors.groupingBy() => classifier(Function), Map factory,downstream collector(Again collector)
         // forEach() => Takes Consumer as input.
         // findFirst() => finds  first element from the List
         // sum() => It applicable only on IntStream
         //reduce() =>   It takes the binary operator as input. Gives a single value.  reduce(U identity, BiFunction<U, ? super T, U> accumulator, BinaryOperator<U> combiner)
+
 
 
         List<Integer> okBye = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
@@ -100,6 +102,7 @@ public class BasicToAdvancedStreamApi {
         int sumofStrinfs = opi.stream().reduce(0, (a, b) -> a + b.length(), (v, b) -> v + b);
         // First one is default value , addition of default value + lenght of first string, combiner where adding the sum of elementes
         System.out.println(sumofStrinfs);
+        System.out.println(opi.stream().collect(Collectors.toMap(a->a,v->v.length())));
 
         //opi.stream().map(a->a.length()).reduce(0,(a,b)->a+b);
         //without using reduce
@@ -123,6 +126,7 @@ public class BasicToAdvancedStreamApi {
 
         String asdff = y.chars().mapToObj(a -> String.valueOf((char) a))
                 .sorted((a, b) -> b.compareTo(a))
+                .sorted((w,f)-> f.compareTo(w))
                 .collect(Collectors.joining());
         System.out.println(asdff);
 

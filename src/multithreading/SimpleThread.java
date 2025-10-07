@@ -17,7 +17,7 @@ public class SimpleThread  extends Thread{
         t1.start();
         //t1.join(); /// main wait for t1 thread to complete.
         System.out.println("main  thread completed");
-        SampleClassUsingRunnable abccd  = new SampleClassUsingRunnable();
+        multithreading.SampleClassUsingRunnable abccd  = new multithreading.SampleClassUsingRunnable();
         Thread  abc = new Thread(abccd); // Runnable can be given as input in the thread class constructor.
 
 
