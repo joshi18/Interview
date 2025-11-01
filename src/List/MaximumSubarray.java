@@ -1,4 +1,4 @@
-package List;
+package src.List;
 
 public class MaximumSubarray {
     public static void main(String[] args) {

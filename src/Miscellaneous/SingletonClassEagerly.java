@@ -1,4 +1,4 @@
-package Miscellaneous;
+package src.Miscellaneous;
 
 public class SingletonClassEagerly {
 

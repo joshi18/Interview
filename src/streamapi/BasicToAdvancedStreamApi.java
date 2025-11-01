@@ -1,10 +1,8 @@
 package src.streamapi;
 
 import java.util.*;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class BasicToAdvancedStreamApi {
     public static void main(String[] args) {
@@ -100,7 +98,7 @@ public class BasicToAdvancedStreamApi {
         // Sum of Length of Strings
         List<String> opi = Arrays.asList("Abhijit", "Joshi");
         int sumofStrinfs = opi.stream().reduce(0, (a, b) -> a + b.length(), (v, b) -> v + b);
-        // First one is default value , addition of default value + lenght of first string, combiner where adding the sum of elementes
+        // First one is default value , addition of default value + lenght of first string, combiner where adding the sum of elements
         System.out.println(sumofStrinfs);
         System.out.println(opi.stream().collect(Collectors.toMap(a->a,v->v.length())));
 
@@ -199,6 +197,9 @@ public class BasicToAdvancedStreamApi {
                                         .collect(Collectors.toList())
 
                         ))));
+
+
+
 
 
 

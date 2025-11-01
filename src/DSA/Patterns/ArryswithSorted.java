@@ -1,4 +1,4 @@
-package DSA.Patterns;
+package src.DSA.Patterns;
 
 public class ArryswithSorted {
     // find the element in the rotated sorted array.

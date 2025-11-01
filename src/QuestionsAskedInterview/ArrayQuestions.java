@@ -1,4 +1,4 @@
-package QuestionsAskedInterview;
+package src.QuestionsAskedInterview;
 
 import java.util.*;
 
