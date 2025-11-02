@@ -1,4 +1,4 @@
-package DesignPatterns.CreationalDesignPatterns.AbstractDesignPattern;
+package src.DesignPatterns.CreationalDesignPatterns.AbstractDesignPattern;
 
 public interface  AbstactFactory {
 

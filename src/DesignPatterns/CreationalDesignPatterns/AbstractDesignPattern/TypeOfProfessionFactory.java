@@ -1,4 +1,4 @@
-package DesignPatterns.CreationalDesignPatterns.AbstractDesignPattern;
+package src.DesignPatterns.CreationalDesignPatterns.AbstractDesignPattern;
 // Factory Producer class
 public class TypeOfProfessionFactory  {
 

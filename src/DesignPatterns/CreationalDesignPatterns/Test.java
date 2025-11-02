@@ -1,12 +1,13 @@
-package DesignPatterns.CreationalDesignPatterns;
+package src.DesignPatterns.CreationalDesignPatterns;
 
 
-import DesignPatterns.CreationalDesignPatterns.AbstractDesignPattern.AbstactFactory;
-import DesignPatterns.CreationalDesignPatterns.AbstractDesignPattern.Profession;
-import DesignPatterns.CreationalDesignPatterns.AbstractDesignPattern.TypeOfProfessionFactory;
+
 //import DesignPatterns.CreationalDesignPatterns.FactoryDesign.Profession;
 import DesignPatterns.CreationalDesignPatterns.FactoryDesign.ProfessionFactory;
 import DesignPatterns.CreationalDesignPatterns.Singleton.Product;
+import src.DesignPatterns.CreationalDesignPatterns.AbstractDesignPattern.AbstactFactory;
+import src.DesignPatterns.CreationalDesignPatterns.AbstractDesignPattern.Profession;
+import src.DesignPatterns.CreationalDesignPatterns.AbstractDesignPattern.TypeOfProfessionFactory;
 
 // Why design patterns neede ? => As the design patterns are well documented and structruced solution of existing problem
 // so design patterns are also needed to execute the solutions. Tried and testeed soln of exsiogn documted problem.
