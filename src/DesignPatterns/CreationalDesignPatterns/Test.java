@@ -1,9 +1,9 @@
 package src.DesignPatterns.CreationalDesignPatterns;
 
 
-
 //import DesignPatterns.CreationalDesignPatterns.FactoryDesign.Profession;
-import DesignPatterns.CreationalDesignPatterns.FactoryDesign.ProfessionFactory;
+//import DesignPatterns.CreationalDesignPatterns.FactoryDesign.ProfessionFactory;
+
 import DesignPatterns.CreationalDesignPatterns.Singleton.Product;
 import src.DesignPatterns.CreationalDesignPatterns.AbstractDesignPattern.AbstactFactory;
 import src.DesignPatterns.CreationalDesignPatterns.AbstractDesignPattern.Profession;
@@ -19,24 +19,20 @@ public class Test {
         // Factory design Pattern
         // Here we have created a ProfessionFactory class and new method which return the instance of the Profession
         // and we are calling with the method of its implementing class.
-        ProfessionFactory professionFactory = new ProfessionFactory();
-         //Profession profession  = professionFactory.getprofession("Doctor");
-         //profession.print();
+        //ProfessionFactory professionFactory = new ProfessionFactory();
+        //Profession profession  = professionFactory.getprofession("Doctor");
+        //profession.print();
 
 
         // ABSTRACT DESIGN PATTERN (FACTORY OF FACTORY).
-         AbstactFactory abstactFactory = TypeOfProfessionFactory.getabstactprofession("MainProfession");
+        AbstactFactory abstactFactory = TypeOfProfessionFactory.getabstactprofession("MainProfession");
         Profession engg = abstactFactory.getabstactprofession("Doctor");
-         engg.print();
+        engg.print();
 
 
-
-         // Singleton Design Pattern
+        // Singleton Design Pattern
         Product product = Product.getInstance();
         product.getHashCode();
-
-
-
 
 
     }

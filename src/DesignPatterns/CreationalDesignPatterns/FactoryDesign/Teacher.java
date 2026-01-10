@@ -1,6 +1,6 @@
-package DesignPatterns.CreationalDesignPatterns.FactoryDesign;
+package src.DesignPatterns.CreationalDesignPatterns.FactoryDesign;
 
-public class Teacher implements Profession{
+public class Teacher implements DesignPatterns.CreationalDesignPatterns.FactoryDesign.Profession {
     @Override
     public void print() {
         System.out.println("Inside the Teacher class");

@@ -1,4 +1,4 @@
-package DesignPatterns.CreationalDesignPatterns.Builder;
+package src.DesignPatterns.CreationalDesignPatterns.Builder;
 
 //Category: Creational pattern
 //
@@ -8,17 +8,20 @@ package DesignPatterns.CreationalDesignPatterns.Builder;
 //
 
 
-
+import java.util.HashMap;
+import java.util.Map;
 
 public class BuilderMainClass {
 
     public static void main(String[] args) {
 
 
-        HttpRequest request = new HttpRequest.HttpRequestBuilder("Abhijit/Joshi","Post")
+        DesignPatterns.CreationalDesignPatterns.Builder.HttpRequest request = new DesignPatterns.CreationalDesignPatterns.Builder.HttpRequest.HttpRequestBuilder("Abhijit/Joshi", "Post")
                 .clientId(1010)
                 .token("bearer 0103jdf")
                 .apikey("ansjdnewifjoijv")
                 .build();
+
+        //
     }
 }

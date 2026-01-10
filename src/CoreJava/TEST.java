@@ -6,7 +6,7 @@ import java.util.concurrent.Callable;
 public class TEST {
 
     public static void main(String[] args) {
-        ParentClass pa = new ChildClass();
+        CoreJava.ParentClass pa = new CoreJava.ChildClass();
         pa.getMessageOnTime();//  if the  override methods are static(both child and parent class methods) then reference variables method gets executed
     }
 

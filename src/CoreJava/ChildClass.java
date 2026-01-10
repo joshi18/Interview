@@ -1,8 +1,8 @@
 package CoreJava;
 
-public class ChildClass extends ParentClass {
+public class ChildClass extends CoreJava.ParentClass {
 
- public static void getMessageOnTime(){
-     System.out.println("Inside a Child Class");
- }
+    public static void getMessageOnTime() {
+        System.out.println("Inside a Child Class");
+    }
 }

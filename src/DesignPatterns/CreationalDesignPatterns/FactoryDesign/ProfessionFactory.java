@@ -1,20 +1,23 @@
-package DesignPatterns.CreationalDesignPatterns.FactoryDesign;
+package src.DesignPatterns.CreationalDesignPatterns.FactoryDesign;
+
+import src.DesignPatterns.CreationalDesignPatterns.FactoryDesign.Doctor;
+import src.DesignPatterns.CreationalDesignPatterns.FactoryDesign.Engineer;
 
 public class ProfessionFactory {
 
-    public Profession getprofession(String typeofProfession){
+    public Object getprofession(String typeofProfession) {
 
-        if (typeofProfession == null){
+        if (typeofProfession == null) {
             return null;
 
         }
-        if (typeofProfession.equalsIgnoreCase("Doctor")){
+        if (typeofProfession.equalsIgnoreCase("Doctor")) {
             return new Doctor();
         } else if (typeofProfession.equalsIgnoreCase("Engineer")) {
             return new Engineer();
 
         } else if (typeofProfession.equalsIgnoreCase("Teacher")) {
-            return new Teacher();
+            //return new DesignPatterns.CreationalDesignPatterns.FactoryDesign.Teacher();
 
         }
         return null;
