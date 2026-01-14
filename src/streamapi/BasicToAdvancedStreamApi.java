@@ -17,7 +17,7 @@ public class BasicToAdvancedStreamApi {
         // skip() => Skip first n elements.
         // sorted() =>  sorts  in natural order
         // sorted((a,b)=>a-b) => sorts the elements in custom order. Takes input as comparator. Comparator's compare methods is executed which takes  two  arguments.
-        // peek() => return void. Takes one input but returns void. It can be only use dfor debugging and logging purposes.
+        // peek() => return void. Takes one input but returns void. It can be only used for debugging and logging purposes.
         // mapToObj() => takes function as input. return stream .Converts primitives (IntStream, LongStream, DoubleStream) back to objects.
 
 
@@ -38,7 +38,6 @@ public class BasicToAdvancedStreamApi {
         // findFirst() => finds  first element from the List
         // sum() => It applicable only on IntStream
         //reduce() =>   It takes the binary operator as input. Gives a single value.  reduce(U identity, BiFunction<U, ? super T, U> accumulator, BinaryOperator<U> combiner)
-
 
 
         List<Integer> okBye = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
@@ -100,7 +99,7 @@ public class BasicToAdvancedStreamApi {
         int sumofStrinfs = opi.stream().reduce(0, (a, b) -> a + b.length(), (v, b) -> v + b);
         // First one is default value , addition of default value + lenght of first string, combiner where adding the sum of elements
         System.out.println(sumofStrinfs);
-        System.out.println(opi.stream().collect(Collectors.toMap(a->a,v->v.length())));
+        System.out.println(opi.stream().collect(Collectors.toMap(a -> a, v -> v.length())));
 
         //opi.stream().map(a->a.length()).reduce(0,(a,b)->a+b);
         //without using reduce
@@ -109,7 +108,7 @@ public class BasicToAdvancedStreamApi {
         System.out.println(k);
 
         Collections.sort(okBye);
-        Collections.sort(okBye,(a,b)->b-a);
+        Collections.sort(okBye, (a, b) -> b - a);
 
 
         // Reverse a string using reduce operation
@@ -124,57 +123,52 @@ public class BasicToAdvancedStreamApi {
 
         String asdff = y.chars().mapToObj(a -> String.valueOf((char) a))
                 .sorted((a, b) -> b.compareTo(a))
-                .sorted((w,f)-> f.compareTo(w))
+                .sorted((w, f) -> f.compareTo(w))
                 .collect(Collectors.joining());
         System.out.println(asdff);
 
 
         // range closed.
         // print 1  to 10 numbers .
-        IntStream.range(1,11).forEach(a-> System.out.println(a));
-        System.out.println(IntStream.range(1,20).sum());
-        System.out.println(IntStream.range(1,30).average().getAsDouble());
-
+        IntStream.range(1, 11).forEach(a -> System.out.println(a));
+        System.out.println(IntStream.range(1, 20).sum());
+        System.out.println(IntStream.range(1, 30).average().getAsDouble());
 
 
         String vo = "streamapi";
         System.out.println(vo.chars()
-                .mapToObj(a->(char)a)
-                .map(a->String.valueOf(a))
-                .filter(a->a.contains("a") || a.contains("e") || a.contains("i") || a.contains("o") || a.contains("u"))
+                .mapToObj(a -> (char) a)
+                .map(a -> String.valueOf(a))
+                .filter(a -> a.contains("a") || a.contains("e") || a.contains("i") || a.contains("o") || a.contains("u"))
                 .count());
 
 
-        int [] arr = {1,2,3,4};
+        int[] arr = {1, 2, 3, 4};
         System.out.println(Arrays.stream(arr)
-                        .mapToObj(a->a*a)
+                .mapToObj(a -> a * a)
                 .collect(Collectors.toList()));
 
 
-       List<String> no = Arrays.asList("apple", "cat", "banana","hjk");
-       //no.stream().collect(Collectors.toMap(a->a.length(),Collectors.toList()))
+        List<String> no = Arrays.asList("apple", "cat", "banana", "hjk");
+        //no.stream().collect(Collectors.toMap(a->a.length(),Collectors.toList()))
 
         System.out.println(
                 no.stream()
-                        .collect(Collectors.groupingBy(a->a.length()))
+                        .collect(Collectors.groupingBy(a -> a.length()))
         );
 
 
-
-
-
-       String vc =  "apple banana apple mango banana apple";
+        String vc = "apple banana apple mango banana apple";
         System.out.println(Arrays.stream(vc.split("\\s+"))
-               .collect(Collectors.groupingBy(a->a,Collectors.counting()))
+                .collect(Collectors.groupingBy(a -> a, Collectors.counting()))
                 .entrySet()
                 .stream()
-                        .sorted((a,b)-> Math.toIntExact( b.getValue()- a.getValue()))
-                        .map(a->a.getKey())
-                        .findFirst().get()
+                .sorted((a, b) -> Math.toIntExact(b.getValue() - a.getValue()))
+                .map(a -> a.getKey())
+                .findFirst().get()
 
 
         );
-
 
 
         String mostFrequent = Arrays.stream(vc.split("\\s+"))
@@ -190,40 +184,13 @@ public class BasicToAdvancedStreamApi {
 
         List<streamapi.Employee> employeeList = streamapi.Employee.getEmployeeList();
         System.out.println(employeeList.stream().collect(
-                Collectors.groupingBy(a->a.getDepartment(),
+                Collectors.groupingBy(a -> a.getDepartment(),
                         Collectors.collectingAndThen(Collectors.toList()
-                        , b->b.stream()
-                                        .sorted((a,c)-> (int) (c.getSalary()-a.getSalary()))
+                                , b -> b.stream()
+                                        .sorted((a, c) -> (int) (c.getSalary() - a.getSalary()))
                                         .collect(Collectors.toList())
 
                         ))));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     }
