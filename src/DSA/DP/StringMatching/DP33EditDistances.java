@@ -1,4 +1,4 @@
-package src.DSA.DP;
+package src.DSA.DP.StringMatching;
 
 public class DP33EditDistances {
     public static void main(String[] args) {

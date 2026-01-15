@@ -1,4 +1,4 @@
-package src.DSA.DP;
+package src.DSA.DP.StringMatching;
 
 public class DP32DistinctSubsequences {
     public static void main(String[] args) {
