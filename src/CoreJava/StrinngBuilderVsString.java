@@ -29,7 +29,7 @@ public class StrinngBuilderVsString {
         System.out.println(s2.equals(s1));// FALSE  // In case of StringBuffer,  Equals method will not executed.
         //System.out.println(s1==s2); // FALSE// SCP VS HEAP // Compile time error.
         StringBuffer s3 = new StringBuffer("Hello");
-        System.out.println(s2.equals(s3));  // FALSE  // Euals method is not executed
+        System.out.println(s2.equals(s3));  // FALSE  // Equals method is not executed
         System.out.println(s2 == s3); // FALSE   // every time new memory is allocated for new object.
 
 

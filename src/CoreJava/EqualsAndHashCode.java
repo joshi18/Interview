@@ -32,7 +32,7 @@ public class EqualsAndHashCode {
         System.out.println(s1.equals(s2)); // true (content comparison)
 
 
-        //But when we are comparing 2 objects of persons p1 and p2 then equals() checks the refernce if class does not override the euals method
+        //But when we are comparing 2 objects of persons p1 and p2 then equals() checks the reference if class does not override the equals method
 
         //System.out.println(p1.equals(p2)); // false (Object.equals → reference check)
 

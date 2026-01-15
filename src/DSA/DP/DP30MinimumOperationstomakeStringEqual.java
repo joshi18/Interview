@@ -1,7 +1,11 @@
 package src.DSA.DP;
 
-public class DP25LCS {
+public class DP30MinimumOperationstomakeStringEqual {
     public static void main(String[] args) {
+
+        // Simple
+        // S1 and S2 are given . Find LCS of S1 and S2
+        // s1+s2 - 2*LCS(S1,S2) = Ans
         String s1 = "heap";
         String s2 = "pea";
         int i1 = s1.length();
@@ -26,23 +30,8 @@ public class DP25LCS {
                 }
             }
         }
-        System.out.println(dp[i1][i2]);
-
-        //System.out.println(calculatelcs(s1, s2, n - 1, n - 1));
-    }
-
-    public static int calculatelcs(String s1, String s2, int i1, int i2) {
-
-        // Base Case
-        if (i1 < 0 || i2 < 0) {
-            return 0;
-        }
-
-        if (s1.charAt(i1) == s2.charAt(i2)) {
-            return 1 + calculatelcs(s1, s2, i1 - 1, i2 - 1);
-        }
-        return Math.max(calculatelcs(s1, s2, i1 - 1, i2), calculatelcs(s1, s2, i1, i2 - 1));
-
+        int Ans = s1.length() + s2.length() - 2 * dp[i1][i2];
+        System.out.println(Ans);
 
     }
 }
