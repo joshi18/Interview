@@ -16,6 +16,10 @@ public class L1752CheckIfArrayIsSortedAndRoated {
 
 
         }
+        // this condition is for checking the last element and first element.
+        if (nums[nums.length - 1] > nums[0]) {
+            count += 1;
+        }
         System.out.println(count);
         if (count >= 2) {
             System.out.println(false);
