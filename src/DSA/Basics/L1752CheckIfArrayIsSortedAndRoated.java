@@ -14,6 +14,7 @@ public class L1752CheckIfArrayIsSortedAndRoated {
                 count += 1;
             }
 
+
         }
         System.out.println(count);
         if (count >= 2) {
