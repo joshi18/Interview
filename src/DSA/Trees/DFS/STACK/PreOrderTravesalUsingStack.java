@@ -31,7 +31,8 @@ public class PreOrderTravesalUsingStack {
         root.right.right = new TreeTraversalUsingStackNode(7);
 
         // System.out.println(printPreOderUsingStack(root));
-        System.out.println(printPostOrderUsingStack(root));
+        //System.out.println(printPostOrderUsingStack(root));
+        System.out.println(printThePostOrderlelementsUsingOneStack(root));
 
     }
 
@@ -58,7 +59,7 @@ public class PreOrderTravesalUsingStack {
 
     public static List<Integer> printPostOrderUsingStack(TreeTraversalUsingStackNode root) {
 
-
+        // this we are doing using 2 stacks .
         List<Integer> wrapList = new ArrayList<>();
         Stack<TreeTraversalUsingStackNode> stack1 = new Stack<>();
         Stack<TreeTraversalUsingStackNode> stack2 = new Stack<>();
@@ -75,6 +76,33 @@ public class PreOrderTravesalUsingStack {
             wrapList.add(stack2.pop().data);
         }
         return wrapList;
+
+    }
+
+    public static List<Integer> printThePostOrderlelementsUsingOneStack(TreeTraversalUsingStackNode root) {
+
+
+        List<Integer> wrapList = new ArrayList<>();
+        if (root == null) return wrapList;
+        Stack<TreeTraversalUsingStackNode> stack = new Stack<>();
+        TreeTraversalUsingStackNode current = root;
+        TreeTraversalUsingStackNode lastvistedNode = null;
+        while (current != null || !stack.empty()) {
+            if (current != null) {
+                stack.push(current);
+                current = current.left;
+            } else {
+                TreeTraversalUsingStackNode peekNode = stack.peek();
+                if (peekNode.right != null && lastvistedNode != peekNode.right) {
+                    current = peekNode.right;
+                } else {
+                    wrapList.add(peekNode.data);
+                    lastvistedNode = stack.pop();
+                }
+            }
+        }
+        return wrapList;
+
 
     }
 }
