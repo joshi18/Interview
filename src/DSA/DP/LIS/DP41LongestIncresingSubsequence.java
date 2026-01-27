@@ -1,4 +1,4 @@
-package src.DSA.DP;
+package src.DSA.DP.LIS;
 
 public class DP41LongestIncresingSubsequence {
     public static void main(String[] args) {
@@ -13,12 +13,15 @@ public class DP41LongestIncresingSubsequence {
                 int take = 0;
                 if (j == -1 || arr[i] > arr[j]) {
                     take = 1 + dp[i + 1][i + 1];
+                    // here prevIndex = i(Recursion)   →   DP column = i + 1
                 }
                 int notTake = dp[i + 1][j + 1];
                 dp[i][j + 1] = Math.max(take, notTake);
             }
         }
         System.out.println(dp[0][0]);
+        // Here we are taking co-ordinate mapping so we are adding every time to j;
+        // Because -1 can not be represented in the array it will give out of bound error. SO....
 
         //System.out.println(lonestIncresingSubsequence(arr, n, -1, 0));
 

@@ -47,7 +47,7 @@ public class findThePairsWithGivenSum {
         // System.out.println(count1);
 
 
-        // Using 2 pointer techinique
+        // Using 2 pointer technique
         int count2 = 0;
         int i = 0;
         int j = mn.size() - 1;

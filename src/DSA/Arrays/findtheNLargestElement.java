@@ -13,23 +13,25 @@ public class findtheNLargestElement {
         abc.add(5);
         abc.add(6);
         int u = 5;
-        System.out.println(findtheNLargestElementusingStreamApi(abc,u));
-        System.out.println(findtheNLargestElementusingpriorityQueue(abc,u));
+        System.out.println(findtheNLargestElementusingStreamApi(abc, u));
+        System.out.println(findtheNLargestElementusingpriorityQueue(abc, u));
     }
 
-    public static int findtheNLargestElementusingStreamApi(List<Integer> listofInteger,int n){
+    public static int findtheNLargestElementusingStreamApi(List<Integer> listofInteger, int n) {
 
-       Integer v=  listofInteger.stream().sorted((a,b)->b-a).skip(n).findFirst().orElse(null);
+        Integer v = listofInteger
+                .stream().sorted((a, b) -> b - a).skip(n).findFirst().orElse(null);
         return v;
 
 
     }
-    public static int  findtheNLargestElementusingpriorityQueue(List<Integer> kl,int b) throws NullPointerException{
+
+    public static int findtheNLargestElementusingpriorityQueue(List<Integer> kl, int b) throws NullPointerException {
         Set<Integer> unique = new HashSet<>(kl);
         PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(unique);
-        int n = priorityQueue.size()-b-1;
-        while (n>0){
-            n-=1;
+        int n = priorityQueue.size() - b - 1;
+        while (n > 0) {
+            n -= 1;
             priorityQueue.poll();
 
         }
