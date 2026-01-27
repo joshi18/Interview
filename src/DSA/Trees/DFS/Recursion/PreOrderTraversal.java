@@ -1,4 +1,4 @@
-package src.DSA.Trees;
+package src.DSA.Trees.DFS.Recursion;
 
 
 class Treenode {
