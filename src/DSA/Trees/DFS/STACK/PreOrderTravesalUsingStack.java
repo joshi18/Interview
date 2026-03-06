@@ -32,7 +32,8 @@ public class PreOrderTravesalUsingStack {
 
         // System.out.println(printPreOderUsingStack(root));
         //System.out.println(printPostOrderUsingStack(root));
-        System.out.println(printThePostOrderlelementsUsingOneStack(root));
+        //System.out.println(printThePostOrderlelementsUsingOneStack(root));
+        System.out.println(printInoderTraversal(root));
 
     }
 
@@ -103,6 +104,37 @@ public class PreOrderTravesalUsingStack {
         }
         return wrapList;
 
+
+    }
+
+    public static List<Integer> printInoderTraversal(TreeTraversalUsingStackNode root) {
+
+        List<Integer> wrapList = new ArrayList<>();
+        if (root == null) return wrapList;
+
+        Stack<TreeTraversalUsingStackNode> stack1 = new Stack<>();
+        Stack<TreeTraversalUsingStackNode> stack2 = new Stack<>();
+        TreeTraversalUsingStackNode curr = root;
+
+        while (curr != null || !stack1.isEmpty()) {
+            // Step 1: Reach the leftmost node, pushing path to stack1
+            while (curr != null) {
+                stack1.push(curr);
+                curr = curr.left;
+            }
+
+            // Step 2: Pop from stack1 (the 'Root' in Left-Root-Right)
+            curr = stack1.pop();
+
+            // Step 3: Push to stack2 to simulate the sequence
+            // (In a standard 2-stack post-order, this is where you'd re-order)
+            stack2.push(curr);
+            curr = curr.right;
+        }
+        for (TreeTraversalUsingStackNode node : stack2) {
+            wrapList.add(node.data);
+        }
+        return wrapList;
 
     }
 }
