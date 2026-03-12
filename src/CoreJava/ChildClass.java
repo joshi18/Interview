@@ -1,4 +1,4 @@
-package CoreJava;
+package src.CoreJava;
 
 public class ChildClass extends CoreJava.ParentClass {
 
