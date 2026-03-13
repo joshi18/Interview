@@ -1,6 +1,7 @@
-package DSA.Arrays;
+package src.DSA.Arrays;
 
 import java.util.*;
+
 // ONLY 3 SUM PROBLEM VARIATIONS ARE HERE;
 public class PracticeSessions {
     public static void main(String[] args) {
@@ -143,5 +144,4 @@ public class PracticeSessions {
     }
 
 
-
-    }
+}
